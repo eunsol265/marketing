@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Scent Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================
+     BACKGROUND SITE
+========================================= -->
+
+<header class="site-header">
+    <div class="logo">Sensonal</div>
+
+    <nav>
+        <a href="#">ABOUT</a>
+        <a href="#">PERFUME</a>
+        <a href="#">PURCHASE</a>
+        <a href="#">SUBSCRIPTION</a>
+        <a href="#">RESERVATION</a>
+    </nav>
+
+
+</header>
+
+<main class="background-content">
+
+    <section class="hero">
+        <p>Sensonal</p>
+        <h1>THE ART OF<br>PERSONAL STYLE</h1>
+        <span>PERFECT PERFUME MADE FOR YOU</span>
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     OVERLAY
+========================================= -->
+
+<div class="modal-overlay">
+
+    <!-- =====================================
+         MAIN MODAL
+    ====================================== -->
+
+    <section class="scent-modal">
+
+        <!-- CLOSE -->
+        <button class="modal-close" id="closeModal">
+            ×
+        </button>
+
+
+        <!-- =================================
+             HEADER
+        ================================== -->
+
+        <header class="modal-header">
+
+            <div class="header-copy">
+
+                <span class="eyebrow">
+                    AI SCENT ANALYSIS
+                </span>
+
+                <h1>
+                    당신의 스타일에 어울리는 향을 찾아드립니다.
+                </h1>
+
+                <p>
+                    착장 사진을 업로드하거나, 원하는 향조를 직접 선택해보세요.<br>
+                    AI가 스타일과 취향을 분석해 가장 잘 어울리는 향을 추천해드립니다.
+                </p>
+
+            </div>
+
+            <div class="header-brand">
+
+                <div class="script">
+                    Find Your Scent
+                </div>
+
+                <span>
+                    STYLE × FRAGRANCE × AI
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================
+             PROGRESS
+        ================================== -->
+
+        <div class="progress">
+
+            <div class="progress-item active">
+                <div class="progress-number">1</div>
+
+                <div>
+                    <strong>스타일 선택</strong>
+                    <span>착장 사진 업로드</span>
+                </div>
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-item">
+                <div class="progress-number">2</div>
+
+                <div>
+                    <strong>향조 분석</strong>
+                    <span>AI가 스타일에 맞는 향조를 분석합니다.</span>
+                </div>
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-item">
+                <div class="progress-number">3</div>
+
+                <div>
+                    <strong>추천 결과</strong>
+                    <span>당신을 위한 맞춤 향을 확인하세요.</span>
+                </div>
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-item">
+                <div class="progress-number">4</div>
+
+                <div>
+                    <strong>완료</strong>
+                    <span>선택한 향을 저장하고 확인합니다.</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             STEP CONTENT
+        ================================== -->
+
+        <div class="step-container">
+
+
+            <!-- =================================
+                 STEP 1
+            ================================== -->
+
+            <div class="step active" data-step="1">
+
+                <div class="section-title">
+
+                    <span>01</span>
+
+                    <div>
+                        <h2>스타일 선택하기</h2>
+                        <p>
+                            착장 사진을 업로드하거나 원하는 향조를 직접 선택할 수 있습니다.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step1-grid">
+
+
+                    <!-- LEFT -->
+                    <div class="style-panel">
+
+                        <div class="upload-header">
+                            <span class="upload-label">STYLE IMAGE</span>
+                            <strong>착장 사진으로 분석하기</strong>
+                            <p>
+                                현재 착장 사진을 업로드하면<br>
+                                AI가 스타일과 어울리는 향조를 분석합니다.
+                            </p>
+                        </div>
+
+
+                        <!-- IMAGE MODE -->
+
+                        <div class="upload-content">
+
+                            <div class="upload-box" id="uploadBox">
+
+                                <div class="uploaded-preview hidden">
+                                    <img
+                                        id="uploadedImage"
+                                        src=""
+                                        alt="uploaded outfit"
+                                    >
+
+                                    <button
+                                        class="remove-image"
+                                        id="removeImage"
+                                    >
+                                        ×
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="upload-empty"
+                                    id="uploadEmpty"
+                                >
+
+                                    <div class="upload-icon">
+                                        ↑
+                                    </div>
+
+                                    <h3>
+                                        착장 사진을 업로드해주세요.
+                                    </h3>
+
+                                    <p>
+                                        JPG, PNG 파일 가능
+                                        <br>
+                                        최대 10MB
+                                    </p>
+
+                                    <button
+                                        class="file-button"
+                                        id="fileButton"
+                                    >
+                                        파일 선택하기
+                                    </button>
+
+                                </div>
+
+                                <input
+                                    type="file"
+                                    id="imageInput"
+                                    accept="image/jpeg,image/png"
+                                    hidden
+                                >
+
+                            </div>
+
+
+                            <div class="example-title">
+                                예시 이미지
+                            </div>
+
+
+                            <div class="examples">
+
+                                <!-- 여기에 실제 이미지 경로 넣으면 됨 -->
+
+                                <button class="example-image">
+                                    <img src="images/example-01.jpg">
+                                </button>
+
+                                <button class="example-image">
+                                    <img src="images/example-02.jpeg">
+                                </button>
+
+                                <button class="example-image">
+                                    <img src="images/example-03.jpg">
+                                </button>
+
+                                <button class="example-image">
+                                    <img src="images/example-04.jpg">
+                                </button>
+
+                                <button class="example-image">
+                                    <img src="images/example-05.jpg">
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MANUAL MODE -->
+
+
+                    </div>
+
+
+                    <!-- RIGHT -->
+                    <div class="fragrance-panel">
+
+                        <div class="panel-title">
+                            <h2>향조 정보 선택하기</h2>
+
+                            <span>
+                                원하는 향의 타입을 선택해주세요.
+                                <small>(선택 사항)</small>
+                            </span>
+                        </div>
+
+
+                        <!-- GENDER -->
+
+                        <div class="option-section">
+
+                            <div class="option-heading">
+                                성별
+                            </div>
+
+                            <div class="gender-options">
+
+                                <button
+                                    class="gender-option active"
+                                    data-gender="남성"
+                                >
+                                    <span>♂</span>
+                                    남성
+                                </button>
+
+                                <button
+                                    class="gender-option"
+                                    data-gender="여성"
+                                >
+                                    <span>♀</span>
+                                    여성
+                                </button>
+
+                                <button
+                                    class="gender-option"
+                                    data-gender="공용"
+                                >
+                                    <span>♧</span>
+                                    공용
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- NOTES -->
+
+                        <div class="option-section notes-section">
+
+                            <div class="option-heading">
+
+                                <span>
+                                    향조 노트
+                                    <i>ⓘ</i>
+                                </span>
+
+                                <label class="select-all">
+                                    <input
+                                        type="checkbox"
+                                        id="selectAll"
+                                    >
+                                    전체 선택
+                                </label>
+
+                            </div>
+
+
+                            <!-- TOP -->
+
+                            <div class="note-row">
+
+                                <div class="note-image citrus-image">
+                                    <ion-icon name="flower-outline"></ion-icon>
+                                </div>
+
+                                <div class="note-info">
+
+                                    <strong>
+                                        탑 노트
+                                        <small>(첫 향)</small>
+                                    </strong>
+
+                                    <span>
+                                        처음 느껴지는 향으로,
+                                        산뜻하고 가벼운 향
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    class="note-select"
+                                    data-note="top"
+                                >
+                                    선택하기
+                                    <b>›</b>
+                                </button>
+
+                            </div>
+
+
+                            <!-- MIDDLE -->
+
+                            <div class="note-row">
+
+                                <div class="note-image floral-image">
+                                    <ion-icon name="leaf-outline"></ion-icon>
+                                </div>
+
+                                <div class="note-info">
+
+                                    <strong>
+                                        미들 노트
+                                        <small>(중간 향)</small>
+                                    </strong>
+
+                                    <span>
+                                        향의 중심이 되는,
+                                        가장 오래 지속되는 향
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    class="note-select"
+                                    data-note="middle"
+                                >
+                                    선택하기
+                                    <b>›</b>
+                                </button>
+
+                            </div>
+
+
+                            <!-- BASE -->
+
+                            <div class="note-row">
+
+                                <div class="note-image woody-image">
+                                    <ion-icon name="rose-outline"></ion-icon>
+                                </div>
+
+                                <div class="note-info">
+
+                                    <strong>
+                                        베이스 노트
+                                        <small>(잔향)</small>
+                                    </strong>
+
+                                    <span>
+                                        마지막까지 남는,
+                                        깊고 묵직한 향
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    class="note-select"
+                                    data-note="base"
+                                >
+                                    선택하기
+                                    <b>›</b>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AI SIDE CARD -->
+
+                    <aside class="ai-card">
+
+                        <div class="ai-card-image">
+
+                            <!-- 향수 이미지 넣을 곳 -->
+                            <img
+                                src="images/perfume.jpg"
+                                alt="perfume"
+                            >
+
+                        </div>
+
+                        <div class="ai-card-content">
+
+                            <div class="ai-label">
+                                AI가 분석한<br>
+                                당신의 분위기
+                            </div>
+
+                            <div class="tags">
+
+                                <span>#세련된</span>
+                                <span>#차분한</span>
+                                <span>#모던한</span>
+
+                            </div>
+
+                            <blockquote>
+                                “자신감 있는 도시적인 무드가 느껴져요.”
+                            </blockquote>
+
+                            <p>
+                                당신의 스타일에 어울리는<br>
+                                향조를 AI가 분석하여<br>
+                                맞춤 추천해드립니다.
+                            </p>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 STEP 2
+            ================================== -->
+
+            <div class="step" data-step="2">
+
+                <div class="analysis-screen">
+
+                    <div class="analysis-icon">
+                        ✦
+                    </div>
+
+                    <h2>
+                        당신의 스타일을 분석하고 있습니다.
+                    </h2>
+
+                    <p>
+                        착장의 색감, 소재, 실루엣을 분석하여<br>
+                        가장 어울리는 향조를 찾고 있습니다.
+                    </p>
+
+                    <div class="analysis-loader">
+
+                        <div class="loader-bar">
+                            <span id="loaderBar"></span>
+                        </div>
+
+                        <strong id="loaderPercent">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="analysis-status" id="analysisStatus">
+                        착장 이미지를 분석하는 중...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 STEP 3
+            ================================== -->
+
+            <div class="step" data-step="3">
+
+                <div class="result-header">
+
+                    <span class="eyebrow">
+                        AI RECOMMENDATION
+                    </span>
+
+                    <h2>
+                        당신에게 어울리는 향을 찾았습니다.
+                    </h2>
+
+                    <p>
+                        스타일과 선택하신 향조를 바탕으로 추천한 결과입니다.
+                    </p>
+
+                </div>
+
+
+                <div class="result-grid">
+                    <!-- JS가 실제 추천 결과를 렌더링 -->
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 STEP 4
+            ================================== -->
+
+            <div class="step" data-step="4">
+
+                <div class="complete-screen">
+
+                    <div class="complete-mark">
+                        ✓
+                    </div>
+
+                    <span class="eyebrow">
+                        ANALYSIS COMPLETE
+                    </span>
+
+                    <h2>
+                        당신만의 향을 찾았습니다.
+                    </h2>
+
+                    <p>
+                        추천 결과가 성공적으로 저장되었습니다.
+                    </p>
+
+                    <div class="complete-scent">
+                        <span>
+                            RECOMMENDED SCENT
+                        </span>
+                    
+                        <strong id="completeScentName">
+                            -
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer class="modal-footer">
+
+            <button
+                class="button secondary"
+                id="prevButton"
+            >
+                이전
+            </button>
+
+            <button
+                class="button primary"
+                id="nextButton"
+            >
+                다음 단계
+                <span>→</span>
+            </button>
+
+        </footer>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================
+     NOTE SELECT MODAL
+========================================= -->
+
+<div
+    class="note-modal-overlay"
+    id="noteModal"
+>
+
+    <div class="note-modal">
+
+        <button
+            class="note-modal-close"
+            id="noteModalClose"
+        >
+            ×
+        </button>
+
+        <span class="eyebrow">
+            SELECT NOTE
+        </span>
+
+        <h2 id="noteModalTitle">
+            탑 노트
+        </h2>
+
+        <p>
+            원하는 향료를 선택해주세요.
+        </p>
+
+
+        <div class="note-options" id="noteOptions">
+
+        </div>
+
+
+        <button
+            class="button primary full"
+            id="noteConfirm"
+        >
+            선택 완료
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
